@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MVVM Architecture</string>
+
+    <!-- adMob -->
+    <!-- test -->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="native_ad_unit_id">ca-app-pub-3940256099942544/8135179316</string>
+    <string name="ad_mob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+
+    <string name="title_send_feedback">Tell me something is not correct</string>
+    <string name="mail_feedback_subject">Report an application issue</string>
+    <string name="text_share_content">I suggest this app for you:</string>
+    <string name="text_main_title_share_app">Share app</string>
+
+    <string name="title_report_problem">Report problem</string>
+    <string name="title_share">Share</string>
+</resources>

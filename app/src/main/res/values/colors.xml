@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#19647e</color>
+    <color name="colorPrimaryDark">#19647e</color>
+    <color name="colorAccent">#19647e</color>
+    <color name="colorTime">#214982</color>
+    <color name="colorSwitch">#3f7da1</color>
+    <color name="colorSwitchDeactivate">#b3b4bd</color>
+    <color name="colorTextButtonCompanyDetails">#3a50c9</color>
+    <color name="colorBackground">#0c374d</color>
+    <color name="colorA240">#64f0f0f0</color>
+    <color name="colorButtonDialog">#31c613</color>
+    <color name="colorBackground24">#99444446</color>
+    <color name="color205">#c8cdcdcd</color>
+    <color name="colorGreen">#05c613</color>
+    <color name="colorTextSetting">#004a80</color>
+    <color name="color225">#e1e1e1</color>
+    <color name="color183">#b7b7b7</color>
+    <color name="color235">#ebebeb</color>
+    <color name="color250">#fafafa</color>
+    <color name="colorBgDefault">#19647e</color>
+    <color name="color185">#b9b9b9</color>
+</resources>
