@@ -2,6 +2,7 @@ package com.mvvm.architecture.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -21,6 +22,7 @@ import com.google.android.gms.ads.formats.NativeAd;
 import com.google.android.gms.ads.formats.NativeAdOptions;
 import com.google.android.gms.ads.formats.UnifiedNativeAd;
 import com.google.android.gms.ads.formats.UnifiedNativeAdView;
+import com.mvvm.architecture.BuildConfig;
 import com.mvvm.architecture.R;
 
 import java.text.SimpleDateFormat;
@@ -28,7 +30,12 @@ import java.util.Date;
 import java.util.List;
 
 public class AdMobUtils {
-    private static final String dtStart = "2017-10-01T09:27:37Z";
+    public static final String ADS_NATIVE_DEFAULT = "ca-app-pub-3940256099942544/8135179316";
+    public static final String ADS_BANNER_DEFAULT = "ca-app-pub-3940256099942544/6300978111";
+    public static final String ADS_INTERSTITIAL_DEFAULT = "ca-app-pub-3940256099942544/1033173712";
+    public static final String ADS_APP_ID_DEFAULT = "ca-app-pub-3940256099942544~3347511713";
+    private static final String dtStart = "2018-10-01T09:27:37Z";
+    private static final String dtStartDebug = "2017-10-01T09:27:37Z";
 
     /**
      * mục đích là để bắt đầu từ 1 thời gian nhất định(dtStart) mới bắt đầu chạy quảng cáo
@@ -39,7 +46,12 @@ public class AdMobUtils {
     private static boolean isShowAdsByDate() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         try {
-            Date date = format.parse(dtStart);
+            Date date;
+            if (BuildConfig.DEBUG) {
+                date = format.parse(dtStartDebug);
+            } else {
+                date = format.parse(dtStart);
+            }
             Date currentDate = new Date();
             return date.before(currentDate);
         } catch (Exception e) {
@@ -83,8 +95,10 @@ public class AdMobUtils {
     }
 
     /**
+     * native ads
+     *
      * @param nativeAd
-     * @param adView   Đây là quảng cáo native
+     * @param adView
      */
     private static void populateUnifiedNativeAdView(UnifiedNativeAd nativeAd,
                                                     UnifiedNativeAdView adView) {
@@ -165,8 +179,11 @@ public class AdMobUtils {
      */
     public static void loadNativeAd(final Activity activity, final FrameLayout frameLayout) {
         if (!isShowAdsByDate()) return;
-        AdLoader.Builder builder =
-            new AdLoader.Builder(activity, activity.getString(R.string.native_ad_unit_id));
+        String nativeAdId = activity.getString(R.string.native_ad_unit_id);
+        if (!BuildConfig.DEBUG) {
+            if (TextUtils.equals(nativeAdId, ADS_NATIVE_DEFAULT)) return;
+        }
+        AdLoader.Builder builder = new AdLoader.Builder(activity, nativeAdId);
         frameLayout.setVisibility(View.GONE);
         builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
             @Override
@@ -203,6 +220,9 @@ public class AdMobUtils {
      */
     public static void initInterstitialAds(Context context, String interstitialId) {
         if (!isShowAdsByDate()) return;
+        if (!BuildConfig.DEBUG) {
+            if (TextUtils.equals(interstitialId, ADS_INTERSTITIAL_DEFAULT)) return;
+        }
         final InterstitialAd interstitialAd = new InterstitialAd(context);
         interstitialAd.setAdUnitId(interstitialId);
         interstitialAd.loadAd(new AdRequest.Builder().build());

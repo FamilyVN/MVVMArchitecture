@@ -6,6 +6,18 @@
         <variable
             name="viewModel"
             type="com.mvvm.architecture.view.ui.activity.base.BaseViewModel"/>
+
+        <variable
+            name="listener"
+            type="com.mvvm.architecture.view.ui.activity.base.BaseViewModel"/>
+
+        <variable
+            name="position"
+            type="int"/>
+
+        <variable
+            name="parentPosition"
+            type="int"/>
     </data>
 
     <View android:tag="placeholder"/>
