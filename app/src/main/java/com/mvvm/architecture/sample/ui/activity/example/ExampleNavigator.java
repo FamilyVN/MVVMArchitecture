@@ -1,4 +1,4 @@
-package com.mvvm.architecture.view.ui.activity.example;
+package com.mvvm.architecture.sample.ui.activity.example;
 
 public interface ExampleNavigator {
     void goToFeedBack();

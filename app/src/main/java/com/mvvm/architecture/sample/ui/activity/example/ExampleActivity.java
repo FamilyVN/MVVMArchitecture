@@ -1,4 +1,4 @@
-package com.mvvm.architecture.view.ui.activity.example;
+package com.mvvm.architecture.sample.ui.activity.example;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -6,9 +6,9 @@ import android.net.Uri;
 
 import com.mvvm.architecture.R;
 import com.mvvm.architecture.databinding.ActivityExampleBinding;
-import com.mvvm.architecture.lifecycle.Constant;
-import com.mvvm.architecture.utils.AdMobUtils;
-import com.mvvm.architecture.view.ui.activity.base.BaseActivity;
+import com.mvvm.architecture.base.lifecycle.Constant;
+import com.mvvm.architecture.base.utils.AdMobUtils;
+import com.mvvm.architecture.base.ui.activity.BaseActivity;
 
 public class ExampleActivity extends BaseActivity<ActivityExampleBinding, ExampleViewModel>
     implements ExampleNavigator {

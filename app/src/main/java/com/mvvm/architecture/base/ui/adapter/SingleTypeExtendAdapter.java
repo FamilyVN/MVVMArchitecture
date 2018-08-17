@@ -1,4 +1,4 @@
-package com.mvvm.architecture.view.ui.adapter.base;
+package com.mvvm.architecture.base.ui.adapter;
 
 import android.content.Context;
 

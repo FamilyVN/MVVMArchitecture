@@ -1,4 +1,4 @@
-package com.mvvm.architecture.utils;
+package com.mvvm.architecture.base.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

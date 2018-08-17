@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.mvvm.architecture.view.ui.adapter.base;
+package com.mvvm.architecture.base.ui.adapter;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;

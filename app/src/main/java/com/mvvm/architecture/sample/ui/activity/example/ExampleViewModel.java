@@ -1,6 +1,6 @@
-package com.mvvm.architecture.view.ui.activity.example;
+package com.mvvm.architecture.sample.ui.activity.example;
 
-import com.mvvm.architecture.view.ui.activity.base.BaseViewModel;
+import com.mvvm.architecture.base.ui.activity.BaseViewModel;
 
 public class ExampleViewModel extends BaseViewModel<ExampleNavigator> {
     public void goToFeedBack() {
