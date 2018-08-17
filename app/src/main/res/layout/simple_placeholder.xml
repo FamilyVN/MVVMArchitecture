@@ -5,11 +5,11 @@
 
         <variable
             name="viewModel"
-            type="com.mvvm.architecture.base.ui.activity.BaseViewModel"/>
+            type="com.mvvm.architecture.template.ui.activity.BaseViewModel"/>
 
         <variable
             name="listener"
-            type="com.mvvm.architecture.base.ui.activity.BaseViewModel"/>
+            type="com.mvvm.architecture.template.ui.activity.BaseViewModel"/>
 
         <variable
             name="position"

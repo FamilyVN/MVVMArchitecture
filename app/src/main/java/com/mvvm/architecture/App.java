@@ -3,7 +3,7 @@ package com.mvvm.architecture;
 import android.app.Application;
 
 import com.google.android.gms.ads.MobileAds;
-import com.mvvm.architecture.base.utils.SpManager;
+import com.mvvm.architecture.template.utils.SpManager;
 
 public class App extends Application {
     @Override
