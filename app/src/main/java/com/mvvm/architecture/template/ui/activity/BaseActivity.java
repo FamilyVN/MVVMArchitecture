@@ -11,6 +11,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import com.mvvm.architecture.BR;
+import com.mvvm.architecture.template.utils.CommonUtils;
 
 public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseViewModel>
     extends AppCompatActivity implements BaseNavigator {
@@ -45,7 +46,7 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
 
     protected void showLoading() {
         if (mProgressDialog == null) {
-            mProgressDialog = new ProgressDialog(this);
+            mProgressDialog = CommonUtils.showLoadingDialog(this);
             mProgressDialog.show();
         }
     }

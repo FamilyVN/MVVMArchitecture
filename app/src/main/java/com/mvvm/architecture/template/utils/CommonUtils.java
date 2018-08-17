@@ -13,6 +13,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -86,8 +87,12 @@ public class CommonUtils {
         return new SimpleDateFormat(TIMESTAMP_FORMAT, Locale.US).format(new Date());
     }
 
-    public static boolean isEmailValid(String email) {
-        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    public static boolean isValidEmail(CharSequence target) {
+        if (target == null) {
+            return false;
+        } else {
+            return Patterns.EMAIL_ADDRESS.matcher(target).matches();
+        }
     }
 
     public static String loadJSONFromAsset(Context context, String jsonFileName)
@@ -129,6 +134,19 @@ public class CommonUtils {
                 Uri.parse(context
                     .getResources()
                     .getString(R.string.app_google_play_store_link) + appPackageName)));
+        }
+    }
+
+    /**
+     * @param activity
+     * @param url
+     */
+    public static void openBrowser(Activity activity, String url) {
+        if ((!TextUtils.isEmpty(url)) && (activity != null)) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setData(Uri.parse(url));
+            activity.startActivity(intent);
         }
     }
 }
