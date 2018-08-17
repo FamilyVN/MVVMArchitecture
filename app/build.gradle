@@ -64,4 +64,5 @@ dependencies {
     implementation "com.google.android.gms:play-services-location:$project.play"
     implementation "com.google.android.gms:play-services-places:$project.play"
     implementation "com.google.android.gms:play-services-ads:$project.play"
+    implementation 'androidx.exifinterface:exifinterface:1.0.0-rc01'
 }

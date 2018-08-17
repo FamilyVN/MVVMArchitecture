@@ -53,4 +53,9 @@ public class DataBindingUtils {
     public static void setFont(TextView textView, String font) {
         textView.setTypeface(Typeface.createFromAsset(textView.getContext().getAssets(), font));
     }
+
+    @BindingAdapter("visibility")
+    public static void setVisibility(View view, String text) {
+        view.setVisibility(TextUtils.isEmpty(text) ? View.GONE : View.VISIBLE);
+    }
 }
