@@ -1,4 +1,4 @@
-package com.mvvm.architecture.view.ui.activity.base;
+package com.mvvm.architecture.base.ui.activity;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;

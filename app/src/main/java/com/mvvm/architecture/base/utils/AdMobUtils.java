@@ -1,4 +1,4 @@
-package com.mvvm.architecture.utils;
+package com.mvvm.architecture.base.utils;
 
 import android.app.Activity;
 import android.content.Context;

@@ -1,4 +1,4 @@
-package com.mvvm.architecture.view.ui.custom;
+package com.mvvm.architecture.base.ui.custom;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;

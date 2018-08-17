@@ -1,4 +1,4 @@
-package com.mvvm.architecture.lifecycle;
+package com.mvvm.architecture.base.lifecycle;
 
 public class Constant {
     public static final String GOOGLE_PLAY_STORE = "https://play.google.com/store/apps/details?id=";

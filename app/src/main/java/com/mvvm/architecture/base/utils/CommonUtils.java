@@ -1,4 +1,4 @@
-package com.mvvm.architecture.utils;
+package com.mvvm.architecture.base.utils;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -114,6 +114,9 @@ public class CommonUtils {
         return progressDialog;
     }
 
+    /**
+     * @param context
+     */
     public static void openPlayStoreForApp(Context context) {
         final String appPackageName = context.getPackageName();
         try {
