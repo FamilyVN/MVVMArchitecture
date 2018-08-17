@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.mvvm.architecture.sample.ui.activity.example.ExampleViewModel"/>
+            type="com.mvvm.architecture.example.ui.activity.example.ExampleViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
