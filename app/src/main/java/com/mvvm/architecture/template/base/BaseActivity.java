@@ -1,7 +1,6 @@
-package com.mvvm.architecture.template.ui.activity;
+package com.mvvm.architecture.template.base;
 
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Bundle;
@@ -16,8 +15,8 @@ import com.mvvm.architecture.template.utils.CommonUtils;
 public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseViewModel>
     extends AppCompatActivity implements BaseNavigator {
     private ProgressDialog mProgressDialog;
-    private T mViewDataBinding;
-    private V mViewModel;
+    protected T mViewDataBinding;
+    protected V mViewModel;
 
     /**
      * @return layout resource id
@@ -61,17 +60,16 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(message);
         builder.setPositiveButton(getString(android.R.string.ok),
-            new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                }
-            });
+                (dialog, which) -> {
+                    dialog.dismiss();
+                });
         builder.show();
     }
 
     private void performDataBinding() {
         mViewDataBinding = DataBindingUtil.setContentView(this, getLayoutId());
-        mViewModel = mViewModel == null ? getViewModel() : mViewModel;
+        mViewDataBinding.setLifecycleOwner(this);
+        mViewModel = getViewModel();
         mViewDataBinding.setVariable(BR.viewModel, mViewModel);
         mViewDataBinding.executePendingBindings();
     }

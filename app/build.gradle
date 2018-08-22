@@ -16,12 +16,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'API_KEY', '"REPLACE API KEY HERE"'
+        it.buildConfigField 'String', 'BASE_URL', '"REPLACE BASE URL HERE"'
+    }
     lintOptions {
         disable 'GoogleAppIndexingWarning'
         baseline file("lint-baseline.xml")
     }
     dataBinding {
         enabled true
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
     }
 }
 project.ext {
@@ -33,6 +41,11 @@ project.ext {
     interceptor = "3.10.0"
     glide = "4.7.1"
     play = "15.0.1"
+    room_version = "1.0.0-alpha9"
+    rxjava_version = "2.0.5"
+    rxandroid_version = "2.1.0"
+    rxjava_adapter_version = "2.3.0"
+    paging_version = "1.0.0-alpha5"
 }
 
 dependencies {
@@ -47,6 +60,18 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$project.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$project.retrofit"
     implementation "com.squareup.okhttp3:logging-interceptor:$project.interceptor"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rxjava_adapter_version"
+
+    // Rxjava
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+
+    // Paging library
+    implementation "android.arch.paging:runtime:$paging_version"
+
+    // Room dependencies
+    compile "android.arch.persistence.room:runtime:$room_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
 
     // gson
     implementation "com.google.code.gson:gson:$project.gson"

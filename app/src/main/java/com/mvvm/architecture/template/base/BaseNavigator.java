@@ -1,4 +1,4 @@
-package com.mvvm.architecture.template.ui.activity;
+package com.mvvm.architecture.template.base;
 
 public interface BaseNavigator {
     void initBannerAds();
