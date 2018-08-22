@@ -3,25 +3,24 @@ package com.mvvm.architecture.template.base;
 /**
  * Created by FRAMGIA\mai.dai.dien on 8/22/18.
  */
-
 public class Event<T, P> {
     private T mContent;
     private P mPayload;
     private boolean mHasBeenHandled = false;
 
-    public Event(T content){
+    public Event(T content) {
         this.mContent = content;
     }
 
-    public Event(T type, P payload){
+    public Event(T type, P payload) {
         this.mContent = type;
         this.mPayload = payload;
     }
 
-    public T getConentIfNotHandled(){
-        if(mHasBeenHandled){
+    public T getContentIfNotHandled() {
+        if (mHasBeenHandled) {
             return null;
-        }else {
+        } else {
             mHasBeenHandled = true;
             return mContent;
         }
@@ -31,7 +30,7 @@ public class Event<T, P> {
         return mPayload;
     }
 
-    public T peekContent(){
+    public T peekContent() {
         return mContent;
     }
 }

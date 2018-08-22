@@ -17,9 +17,7 @@ import com.mvvm.architecture.template.viewmodel.main.MainViewModelFactory;
 /**
  * Created by FRAMGIA\mai.dai.dien on 8/22/18.
  */
-
 public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewModel> {
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +32,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
             if (error == null) {
                 return;
             }
-            String event = error.getConentIfNotHandled();
+            String event = error.getContentIfNotHandled();
             if (!TextUtils.isEmpty(event)) {
                 switch (event) {
                     case EventStatus.NETWORK_ERROR:

@@ -12,7 +12,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by FRAMGIA\mai.dai.dien on 8/22/18.
  */
-
 public class NetworkHelper {
     public static AppService getService() {
         return getRestAdapter().create(AppService.class);
@@ -20,11 +19,11 @@ public class NetworkHelper {
 
     public static Retrofit getRestAdapter() {
         return new Retrofit.Builder()
-                .baseUrl(BuildConfig.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
-                .client(getHttpClient())
-                .build();
+            .baseUrl(BuildConfig.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
+            .client(getHttpClient())
+            .build();
     }
 
     public static HttpLoggingInterceptor getLoggingInterceptor() {
@@ -37,10 +36,10 @@ public class NetworkHelper {
     public static OkHttpClient getHttpClient() {
         // todo add timeout
         return new OkHttpClient.Builder()
-                // add api key for each request. (can change later or remove)
-                .addInterceptor(new AppNetworkInterceptor())
-                // add logging to log request
-                .addNetworkInterceptor(getLoggingInterceptor())
-                .build();
+            // add api key for each request. (can change later or remove)
+            .addInterceptor(new AppNetworkInterceptor())
+            // add logging to log request
+            .addNetworkInterceptor(getLoggingInterceptor())
+            .build();
     }
 }

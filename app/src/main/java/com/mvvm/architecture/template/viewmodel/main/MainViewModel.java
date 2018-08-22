@@ -11,7 +11,6 @@ import com.mvvm.architecture.template.data.network.response.BaseResponse;
 /**
  * Created by FRAMGIA\mai.dai.dien on 8/22/18.
  */
-
 public class MainViewModel extends BaseViewModel {
     private Repository mRepository;
 
@@ -20,15 +19,15 @@ public class MainViewModel extends BaseViewModel {
     }
 
     /**
-     *  function for demo load data
-     *  when implement in real project can remove or change name for requirement
+     * function for demo load data
+     * when implement in real project can remove or change name for requirement
      */
     public void loadData() {
         subcribe(
-                mRepository.loadData()
-                        .doOnSubscribe(__ -> loading.postValue(true))
-                        .doAfterTerminate(() -> loading.postValue(false))
-                        .subscribe(this::loadSuccess, this::onError)
+            mRepository.loadData()
+                .doOnSubscribe(__ -> loading.postValue(true))
+                .doAfterTerminate(() -> loading.postValue(false))
+                .subscribe(this::loadSuccess, this::onError)
         );
     }
 

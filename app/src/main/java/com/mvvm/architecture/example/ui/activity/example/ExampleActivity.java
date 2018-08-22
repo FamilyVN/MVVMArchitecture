@@ -6,9 +6,9 @@ import android.net.Uri;
 
 import com.mvvm.architecture.R;
 import com.mvvm.architecture.databinding.ActivityExampleBinding;
+import com.mvvm.architecture.template.base.BaseActivity;
 import com.mvvm.architecture.template.lifecycle.Constant;
 import com.mvvm.architecture.template.utils.AdMobUtils;
-import com.mvvm.architecture.template.base.BaseActivity;
 
 public class ExampleActivity extends BaseActivity<ActivityExampleBinding, ExampleViewModel>
     implements ExampleNavigator {

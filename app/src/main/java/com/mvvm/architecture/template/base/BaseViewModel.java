@@ -9,10 +9,10 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
 public abstract class BaseViewModel<N> extends ViewModel {
-    private WeakReference<N> mNavigator;
-    private CompositeDisposable mDisposables = new CompositeDisposable();
     protected MutableLiveData<Boolean> loading = new MutableLiveData<>();
     protected MutableLiveData<Event<String, String>> viewEvent = new MutableLiveData<>();
+    private WeakReference<N> mNavigator;
+    private CompositeDisposable mDisposables = new CompositeDisposable();
 
     @Override
     protected void onCleared() {

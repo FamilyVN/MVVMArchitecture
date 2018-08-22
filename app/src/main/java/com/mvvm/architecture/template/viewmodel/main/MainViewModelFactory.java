@@ -9,7 +9,6 @@ import com.mvvm.architecture.template.data.Repository;
 /**
  * Created by FRAMGIA\mai.dai.dien on 8/22/18.
  */
-
 public class MainViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     private Repository mRepository;
 

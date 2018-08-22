@@ -8,12 +8,15 @@ import io.reactivex.Single;
 /**
  * Created by FRAMGIA\mai.dai.dien on 8/22/18.
  */
-
 public class Repository {
-    private AppService mService;
-    private static Repository sInstance;
     // For Singleton instantiation
     private static final Object LOCK = new Object();
+    private static Repository sInstance;
+    private AppService mService;
+
+    private Repository(AppService service) {
+        mService = service;
+    }
 
     public static synchronized Repository getInstance(AppService service) {
         if (sInstance == null) {
@@ -22,10 +25,6 @@ public class Repository {
             }
         }
         return sInstance;
-    }
-
-    private Repository(AppService service) {
-        mService = service;
     }
 
     // function for demo use api, when implement in real project can remove it

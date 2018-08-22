@@ -8,6 +8,7 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -41,25 +42,26 @@ project.ext {
     interceptor = "3.10.0"
     glide = "4.7.1"
     play = "15.0.1"
-    room_version = "1.0.0-alpha9"
+    room_version = "1.1.1"
     rxjava_version = "2.0.5"
     rxandroid_version = "2.1.0"
     rxjava_adapter_version = "2.3.0"
-    paging_version = "1.0.0-alpha5"
+    paging_version = "1.0.1"
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:multidex:1.0.3'
 
     // view
-    implementation "com.android.support:design:$project.appcompat"
-    implementation "com.android.support:appcompat-v7:$project.appcompat"
-    implementation "com.android.support.constraint:constraint-layout:$project.constraintLayout"
+    implementation "com.android.support:design:$appcompat"
+    implementation "com.android.support:appcompat-v7:$appcompat"
+    implementation "com.android.support.constraint:constraint-layout:$constraintLayout"
 
     // network
-    implementation "com.squareup.retrofit2:retrofit:$project.retrofit"
-    implementation "com.squareup.retrofit2:converter-gson:$project.retrofit"
-    implementation "com.squareup.okhttp3:logging-interceptor:$project.interceptor"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$interceptor"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rxjava_adapter_version"
 
     // Rxjava
@@ -70,24 +72,24 @@ dependencies {
     implementation "android.arch.paging:runtime:$paging_version"
 
     // Room dependencies
-    compile "android.arch.persistence.room:runtime:$room_version"
+    implementation "android.arch.persistence.room:runtime:$room_version"
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"
 
     // gson
-    implementation "com.google.code.gson:gson:$project.gson"
+    implementation "com.google.code.gson:gson:$gson"
 
     // lifecycles
-    implementation "android.arch.lifecycle:runtime:$project.arch"
-    implementation "android.arch.lifecycle:extensions:$project.arch"
-    annotationProcessor "android.arch.lifecycle:compiler:$project.arch"
+    implementation "android.arch.lifecycle:runtime:$arch"
+    implementation "android.arch.lifecycle:extensions:$arch"
+    annotationProcessor "android.arch.lifecycle:compiler:$arch"
 
     // glide
-    implementation "com.github.bumptech.glide:glide:$project.glide"
-    annotationProcessor "com.github.bumptech.glide:compiler:$project.glide"
+    implementation "com.github.bumptech.glide:glide:$glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide"
 
     // play services
-    implementation "com.google.android.gms:play-services-location:$project.play"
-    implementation "com.google.android.gms:play-services-places:$project.play"
-    implementation "com.google.android.gms:play-services-ads:$project.play"
+    implementation "com.google.android.gms:play-services-location:$play"
+    implementation "com.google.android.gms:play-services-places:$play"
+    implementation "com.google.android.gms:play-services-ads:$play"
     implementation 'androidx.exifinterface:exifinterface:1.0.0-rc01'
 }
