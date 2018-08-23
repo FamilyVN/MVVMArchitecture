@@ -14,9 +14,9 @@ import com.mvvm.architecture.template.utils.CommonUtils;
 
 public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseViewModel>
     extends AppCompatActivity implements BaseNavigator {
-    private ProgressDialog mProgressDialog;
     protected T mViewDataBinding;
     protected V mViewModel;
+    private ProgressDialog mProgressDialog;
 
     /**
      * @return layout resource id
@@ -60,9 +60,9 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(message);
         builder.setPositiveButton(getString(android.R.string.ok),
-                (dialog, which) -> {
-                    dialog.dismiss();
-                });
+            (dialog, which) -> {
+                dialog.dismiss();
+            });
         builder.show();
     }
 
