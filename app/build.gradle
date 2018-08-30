@@ -73,6 +73,7 @@ dependencies {
 
     // Room dependencies
     implementation "android.arch.persistence.room:runtime:$room_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     annotationProcessor "android.arch.persistence.room:compiler:$room_version"
 
     // gson

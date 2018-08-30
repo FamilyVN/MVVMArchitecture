@@ -20,4 +20,7 @@
 
     <string name="title_report_problem">Report problem</string>
     <string name="title_share">Share</string>
+
+    <!--menu-->
+    <string name="text_menu_ad_mob">Test AdMob</string>
 </resources>
