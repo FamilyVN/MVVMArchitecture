@@ -37,4 +37,16 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">@dimen/text_size_14</item>
     </style>
+
+    <style name="TextMenu">
+        <item name="android:paddingStart">@dimen/size_20</item>
+        <item name="android:paddingEnd">@dimen/size_20</item>
+        <item name="android:paddingBottom">@dimen/size_10</item>
+        <item name="android:paddingTop">@dimen/size_10</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/text_color_white_black</item>
+        <item name="android:background">@drawable/selector_button_green_a240</item>
+    </style>
 </resources>

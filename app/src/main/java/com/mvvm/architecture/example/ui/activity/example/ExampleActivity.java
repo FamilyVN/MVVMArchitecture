@@ -12,9 +12,6 @@ import com.mvvm.architecture.template.utils.AdMobUtils;
 
 public class ExampleActivity extends BaseActivity<ActivityExampleBinding, ExampleViewModel>
     implements ExampleNavigator {
-    private ExampleViewModel mViewModel;
-    private ActivityExampleBinding mBinding;
-
     @Override
     public int getLayoutId() {
         return R.layout.activity_example;
@@ -28,15 +25,15 @@ public class ExampleActivity extends BaseActivity<ActivityExampleBinding, Exampl
 
     @Override
     public void initViews() {
-        mBinding = getViewDataBinding();
+        mViewDataBinding = getViewDataBinding();
         mViewModel.setNavigator(this);
         // native ads
-        AdMobUtils.loadNativeAd(this, mBinding.frAdsShare);
+        AdMobUtils.loadNativeAd(this, mViewDataBinding.frAdsShare);
     }
 
     @Override
     public void initBannerAds() {
-        AdMobUtils.initBannerAds(mBinding.adBanner);
+        AdMobUtils.initBannerAds(mViewDataBinding.adBanner);
     }
 
     @Override
