@@ -6,6 +6,7 @@ import android.content.Intent;
 import com.mvvm.architecture.R;
 import com.mvvm.architecture.databinding.ActivityMenuBinding;
 import com.mvvm.architecture.example.ui.activity.example.ExampleActivity;
+import com.mvvm.architecture.example.ui.activity.notification.alarm.NotificationWithAlarmManagerActivity;
 import com.mvvm.architecture.template.base.BaseActivity;
 
 public class MenuActivity extends BaseActivity<ActivityMenuBinding, MenuViewModel>
@@ -30,6 +31,12 @@ public class MenuActivity extends BaseActivity<ActivityMenuBinding, MenuViewMode
     @Override
     public void openAdMobTest() {
         Intent intent = new Intent(this, ExampleActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void openNotificationWithAlarmManager() {
+        Intent intent = new Intent(this, NotificationWithAlarmManagerActivity.class);
         startActivity(intent);
     }
 }

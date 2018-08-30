@@ -236,4 +236,8 @@ public class AdMobUtils {
             }
         });
     }
+
+    public static void initInterstitialAds(Context context) {
+        initInterstitialAds(context, context.getString(R.string.interstitial_ad_unit_id));
+    }
 }

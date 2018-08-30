@@ -28,6 +28,7 @@ public class ExampleActivity extends BaseActivity<ActivityExampleBinding, Exampl
         mViewDataBinding = getViewDataBinding();
         mViewModel.setNavigator(this);
         // native ads
+        AdMobUtils.initInterstitialAds(this);
         AdMobUtils.loadNativeAd(this, mViewDataBinding.frAdsShare);
     }
 
@@ -38,7 +39,6 @@ public class ExampleActivity extends BaseActivity<ActivityExampleBinding, Exampl
 
     @Override
     public void goToFeedBack() {
-        AdMobUtils.initInterstitialAds(this, getString(R.string.interstitial_ad_unit_id));
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
         emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{Constant.FEEDBACK_URL});
@@ -51,7 +51,6 @@ public class ExampleActivity extends BaseActivity<ActivityExampleBinding, Exampl
 
     @Override
     public void onShareApp() {
-        AdMobUtils.initInterstitialAds(this, getString(R.string.interstitial_ad_unit_id));
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT,

@@ -19,5 +19,12 @@
             android:text="@string/text_menu_ad_mob"/>
 
         <include layout="@layout/include_break_line183"/>
+
+        <TextView
+            style="@style/TextMenu"
+            android:onClick="@{() -> viewModel.openNotificationWithAlarmManager()}"
+            android:text="@string/text_menu_notification_with_alarm_manager"/>
+
+        <include layout="@layout/include_break_line183"/>
     </LinearLayout>
 </layout>
