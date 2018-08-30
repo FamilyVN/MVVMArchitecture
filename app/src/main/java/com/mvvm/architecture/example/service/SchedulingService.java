@@ -12,6 +12,6 @@ public class SchedulingService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        int index = intent.getIntExtra(NotificationUtils.KEY_ID, 0);
+        NotificationUtils.startAlarmNotification(this);
     }
 }

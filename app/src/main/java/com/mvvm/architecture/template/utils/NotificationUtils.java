@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.util.Log;
 
 import com.mvvm.architecture.R;
 import com.mvvm.architecture.example.service.AlarmBootReceiver;
@@ -31,6 +32,7 @@ public class NotificationUtils {
     }
 
     public static void checkSetupNotification(Context context) {
+        Log.d("TAG", "showNotification = " + showNotification());
         if (showNotification()) {
             createAlarmNotification(context);
         } else {
@@ -111,7 +113,7 @@ public class NotificationUtils {
             .setComponentEnabledSetting(componentName, enabled, PackageManager.DONT_KILL_APP);
     }
 
-    private static void startAlarmNotification(Context context) {
+    public static void startAlarmNotification(Context context) {
         createNotificationChannel(context, CHANNEL_NOTIFICATION_ID);
     }
 
