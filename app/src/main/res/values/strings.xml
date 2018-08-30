@@ -23,4 +23,5 @@
 
     <!--menu-->
     <string name="text_menu_ad_mob">Test AdMob</string>
+    <string name="text_menu_notification_with_alarm_manager">Notification with AlarmManager</string>
 </resources>

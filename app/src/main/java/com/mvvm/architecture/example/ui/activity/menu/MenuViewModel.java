@@ -6,4 +6,8 @@ public class MenuViewModel extends BaseViewModel<MenuNavigator> {
     public void openAdMobTest() {
         getNavigator().openAdMobTest();
     }
+
+    public void openNotificationWithAlarmManager() {
+        getNavigator().openNotificationWithAlarmManager();
+    }
 }
