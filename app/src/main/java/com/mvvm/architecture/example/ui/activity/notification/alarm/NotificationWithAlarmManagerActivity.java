@@ -5,6 +5,9 @@ import android.arch.lifecycle.ViewModelProviders;
 import com.mvvm.architecture.R;
 import com.mvvm.architecture.databinding.ActivityNotificationWithAlarmManagerBinding;
 import com.mvvm.architecture.template.base.BaseActivity;
+import com.mvvm.architecture.template.lifecycle.Constant;
+import com.mvvm.architecture.template.utils.NotificationUtils;
+import com.mvvm.architecture.template.utils.SpManager;
 
 public class NotificationWithAlarmManagerActivity extends
     BaseActivity<ActivityNotificationWithAlarmManagerBinding, NotificationWithAlarmManagerViewModel>
@@ -22,7 +25,21 @@ public class NotificationWithAlarmManagerActivity extends
 
     @Override
     public void initViews() {
-        mViewDataBinding = getViewDataBinding();
         mViewModel.setNavigator(this);
+    }
+
+    @Override
+    public void initListener() {
+        // notification
+        // setup first notification
+        NotificationUtils.checkSetupNotification(this);
+        //
+        mBinding.switchNotification.setChecked(NotificationUtils.showNotification());
+        mBinding.switchNotification.setOnCheckedChangeListener(
+            (buttonView, isChecked) -> {
+                SpManager.getInstance().putBoolean(Constant.SHOW_NOTIFICATION, isChecked);
+                NotificationUtils
+                    .checkSetupNotification(NotificationWithAlarmManagerActivity.this);
+            });
     }
 }

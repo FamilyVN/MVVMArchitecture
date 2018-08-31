@@ -25,16 +25,15 @@ public class ExampleActivity extends BaseActivity<ActivityExampleBinding, Exampl
 
     @Override
     public void initViews() {
-        mViewDataBinding = getViewDataBinding();
         mViewModel.setNavigator(this);
         // native ads
         AdMobUtils.initInterstitialAds(this);
-        AdMobUtils.loadNativeAd(this, mViewDataBinding.frAdsShare);
+        AdMobUtils.loadNativeAd(this, mBinding.frAdsShare);
     }
 
     @Override
     public void initBannerAds() {
-        AdMobUtils.initBannerAds(mViewDataBinding.adBanner);
+        AdMobUtils.initBannerAds(mBinding.adBanner);
     }
 
     @Override

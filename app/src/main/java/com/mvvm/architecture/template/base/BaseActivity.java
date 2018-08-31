@@ -14,7 +14,7 @@ import com.mvvm.architecture.template.utils.CommonUtils;
 
 public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseViewModel>
     extends AppCompatActivity implements BaseNavigator {
-    protected T mViewDataBinding;
+    protected T mBinding;
     protected V mViewModel;
     private ProgressDialog mProgressDialog;
 
@@ -31,8 +31,8 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
      */
     public abstract V getViewModel();
 
-    public T getViewDataBinding() {
-        return mViewDataBinding;
+    public T getBinding() {
+        return mBinding;
     }
 
     @Override
@@ -40,6 +40,7 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
         super.onCreate(savedInstanceState);
         performDataBinding();
         initViews();
+        initListener();
         initBannerAds();
     }
 
@@ -67,11 +68,11 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
     }
 
     private void performDataBinding() {
-        mViewDataBinding = DataBindingUtil.setContentView(this, getLayoutId());
-        mViewDataBinding.setLifecycleOwner(this);
+        mBinding = DataBindingUtil.setContentView(this, getLayoutId());
+        mBinding.setLifecycleOwner(this);
         mViewModel = getViewModel();
-        mViewDataBinding.setVariable(BR.viewModel, mViewModel);
-        mViewDataBinding.executePendingBindings();
+        mBinding.setVariable(BR.viewModel, mViewModel);
+        mBinding.executePendingBindings();
     }
 
     @Override
@@ -88,5 +89,9 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
 
     @Override
     public void initViews() {
+    }
+
+    @Override
+    public void initListener() {
     }
 }

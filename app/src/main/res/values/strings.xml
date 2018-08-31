@@ -24,4 +24,8 @@
     <!--menu-->
     <string name="text_menu_ad_mob">Test AdMob</string>
     <string name="text_menu_notification_with_alarm_manager">Notification with AlarmManager</string>
+
+    <!--notification-->
+    <string name="title_notification">Notification</string>
+    <string name="title_notification_status_bar">Status bar</string>
 </resources>

@@ -24,7 +24,6 @@ public class MenuActivity extends BaseActivity<ActivityMenuBinding, MenuViewMode
 
     @Override
     public void initViews() {
-        mViewDataBinding = getViewDataBinding();
         mViewModel.setNavigator(this);
     }
 
