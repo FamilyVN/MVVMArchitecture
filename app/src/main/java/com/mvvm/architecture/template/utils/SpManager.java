@@ -4,15 +4,23 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SpManager {
+    // For Singleton instantiation
+    private static final Object LOCK = new Object();
     private static SpManager sInstance;
     private SharedPreferences.Editor mEditor;
     private SharedPreferences mSettings;
 
-    public static SpManager getInstance() {
+    public static synchronized SpManager getInstance() {
         if (sInstance == null) {
-            sInstance = new SpManager();
+            synchronized (LOCK) {
+                sInstance = new SpManager();
+            }
         }
         return sInstance;
+    }
+
+    private SpManager() {
+        // private constructor to prevent create instance multiple time
     }
 
     public void init(Context context, String name) {
